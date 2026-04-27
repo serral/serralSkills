@@ -85,6 +85,13 @@ bash scripts/sync.sh
 # "chore: upstream sync <date>". Audit job runs on every PR.
 ```
 
+## Documentation
+
+- [`docs/OPERATIONS.md`](docs/OPERATIONS.md) — runbook for adding skills,
+  per-upstream quirks, audit/pre-commit notes, push gotchas.
+- [`CHANGELOG.md`](CHANGELOG.md) — release history.
+- [`NOTICE`](NOTICE) — per-upstream attribution and pinned SHAs.
+
 ## Upstream sources
 
 - [`jeffallan/claude-skills`](https://github.com/jeffallan/claude-skills) — MIT — 15 skills
