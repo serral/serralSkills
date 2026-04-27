@@ -1,5 +1,5 @@
-# Local design / planning history (kept out of the public repo)
-.history/
+# Local design / planning notes (kept out of the public repo)
+.personal/
 
 # Upstream clones (created transiently by scripts/sync.sh)
 /tmp-upstreams/
