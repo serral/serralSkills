@@ -1,0 +1,48 @@
+{
+  "name": "serral-claude-skills",
+  "owner": {
+    "name": "Andre Serralheiro",
+    "url": "https://github.com/serral"
+  },
+  "metadata": {
+    "description": "Personally curated Claude Code skills, fed from vetted upstream repos. Focus: security, secdevops, devops, kubernetes, AWS, terraform, backend, frontend, fullstack.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "backend-core",
+      "source": "./plugins/backend-core",
+      "description": "Backend framework specialists: FastAPI, NestJS, Go."
+    },
+    {
+      "name": "devops-core",
+      "source": "./plugins/devops-core",
+      "description": "DevOps & SRE skills: monitoring, incident runbooks, GitHub Actions, deployment pipelines, cost optimization."
+    },
+    {
+      "name": "frontend-core",
+      "source": "./plugins/frontend-core",
+      "description": "Frontend framework specialists: React, Next.js."
+    },
+    {
+      "name": "fullstack-core",
+      "source": "./plugins/fullstack-core",
+      "description": "Fullstack-spanning guidance and architecture skills."
+    },
+    {
+      "name": "infra-core",
+      "source": "./plugins/infra-core",
+      "description": "Infrastructure-as-code skills: Terraform, CloudFormation, Kubernetes, multi-cloud architecture."
+    },
+    {
+      "name": "secdevops-core",
+      "source": "./plugins/secdevops-core",
+      "description": "SecDevOps skills: threat modeling (STRIDE, attack trees), SAST, k8s security policies, GitOps, secrets management."
+    },
+    {
+      "name": "security-core",
+      "source": "./plugins/security-core",
+      "description": "Curated security & auditor skills: code review, secure coding, API security testing, production audits."
+    }
+  ]
+}

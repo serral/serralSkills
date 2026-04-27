@@ -1,0 +1,69 @@
+upstream: https://github.com/wshobson/agents
+license: MIT
+pinned_sha: adde832d8fc08cfb22ab44ec14661293c7ad9153
+imported_at: 2026-04-27
+deferred_targets:
+  - name: backend-api-security
+    reason: upstream plugin contains agent personas only, no SKILL.md files
+  - name: frontend-mobile-security
+    reason: upstream plugin contains agent personas only, no SKILL.md files
+  - name: security-compliance
+    reason: upstream plugin contains agent personas only, no SKILL.md files
+  - name: comprehensive-review
+    reason: upstream plugin contains agent personas only, no SKILL.md files
+  - name: pipeline-design
+    reason: not present under that name; imported as deployment-pipeline-design
+skills:
+  - name: attack-tree-construction
+    source_path: plugins/security-scanning/skills/attack-tree-construction
+    plugin_origin: security-scanning
+    vetting_flags: []
+  - name: sast-configuration
+    source_path: plugins/security-scanning/skills/sast-configuration
+    plugin_origin: security-scanning
+    vetting_flags: []
+  - name: security-requirement-extraction
+    source_path: plugins/security-scanning/skills/security-requirement-extraction
+    plugin_origin: security-scanning
+    vetting_flags: []
+  - name: stride-analysis-patterns
+    source_path: plugins/security-scanning/skills/stride-analysis-patterns
+    plugin_origin: security-scanning
+    vetting_flags: []
+  - name: threat-mitigation-mapping
+    source_path: plugins/security-scanning/skills/threat-mitigation-mapping
+    plugin_origin: security-scanning
+    vetting_flags: []
+  - name: incident-runbook-templates
+    source_path: plugins/incident-response/skills/incident-runbook-templates
+    plugin_origin: incident-response
+    vetting_flags:
+      - "lines 91,97,140,153,171,219,222,225,241: curl examples for prometheus/health/feature-flag calls (instructional, benign)"
+  - name: k8s-security-policies
+    source_path: plugins/kubernetes-operations/skills/k8s-security-policies
+    plugin_origin: kubernetes-operations
+    vetting_flags: []
+  - name: gitops-workflow
+    source_path: plugins/kubernetes-operations/skills/gitops-workflow
+    plugin_origin: kubernetes-operations
+    vetting_flags:
+      - "line 42: 'base64 -d' is the standard ArgoCD initial-admin-secret retrieval idiom (instructional, benign)"
+      - "line 120: 'curl ... | sudo bash' for FluxCD install — official upstream-documented command but still a curl-pipe-to-shell pattern; review on each upstream sync"
+  - name: cost-optimization
+    source_path: plugins/cloud-infrastructure/skills/cost-optimization
+    plugin_origin: cloud-infrastructure
+    vetting_flags: []
+  - name: github-actions-templates
+    source_path: plugins/cicd-automation/skills/github-actions-templates
+    plugin_origin: cicd-automation
+    vetting_flags: []
+  - name: deployment-pipeline-design
+    source_path: plugins/cicd-automation/skills/deployment-pipeline-design
+    plugin_origin: cicd-automation
+    vetting_flags:
+      - "lines 300,307,343,416: curl examples for health checks, slack webhook, prometheus queries (instructional, benign)"
+  - name: secrets-management
+    source_path: plugins/cicd-automation/skills/secrets-management
+    plugin_origin: cicd-automation
+    vetting_flags:
+      - "line 108: 'apk add curl jq' inside example CI manifest (instructional, benign)"

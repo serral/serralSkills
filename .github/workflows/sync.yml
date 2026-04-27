@@ -1,0 +1,36 @@
+name: sync
+
+on:
+  schedule:
+    - cron: "23 6 * * 1"  # Mondays 06:23 UTC
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv (for uvx mcp-scan)
+        run: pip install uv
+
+      - name: Run sync
+        run: bash scripts/sync.sh
+
+      - name: Open PR if upstream changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: upstream sync"
+          branch: chore/upstream-sync
+          delete-branch: true
+          title: "chore: upstream sync ${{ github.run_id }}"
+          body: |
+            Automated upstream sync from `scripts/sync.sh`.
+
+            **Review checklist:**
+            - [ ] Diff in `skills/` is plausibly an upstream improvement
+            - [ ] No new entries under `vendor/*.lock` `vetting_flags:`
+            - [ ] Audit job below is green

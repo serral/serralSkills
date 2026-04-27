@@ -1,0 +1,46 @@
+# NOTICE — Upstream attribution
+
+This repository vendors selected SKILL.md files (and sibling resources) from the
+following upstream repositories. Each skill retains its upstream license; this
+NOTICE preserves attribution and the exact pinned commit at import time.
+
+Re-runs of `scripts/sync.sh` will update the pinned SHAs and regenerate this
+file.
+
+---
+
+## jeffallan/claude-skills
+- Upstream: https://github.com/jeffallan/claude-skills
+- License: MIT
+- Pinned SHA: 3d95bb16b030af43bd838dc99fdc77dd40b29014
+- Imported: 2026-04-27
+- Skills (15): security-reviewer, secure-code-guardian, code-reviewer,
+  devops-engineer, sre-engineer, monitoring-expert, kubernetes-specialist,
+  cloud-architect, terraform-engineer, fastapi-expert, nestjs-expert,
+  golang-pro, react-expert, nextjs-developer, fullstack-guardian
+
+## wshobson/agents
+- Upstream: https://github.com/wshobson/agents
+- License: MIT
+- Pinned SHA: adde832d8fc08cfb22ab44ec14661293c7ad9153
+- Imported: 2026-04-27
+- Skills (12): attack-tree-construction, sast-configuration,
+  security-requirement-extraction, stride-analysis-patterns,
+  threat-mitigation-mapping, incident-runbook-templates,
+  k8s-security-policies, gitops-workflow, cost-optimization,
+  github-actions-templates, deployment-pipeline-design, secrets-management
+- Deferred (agent-personas only, no SKILL.md): backend-api-security,
+  frontend-mobile-security, security-compliance, comprehensive-review
+
+## sickn33/antigravity-awesome-skills
+- Upstream: https://github.com/sickn33/antigravity-awesome-skills
+- License: MIT (code) + CC BY 4.0 (content)
+- Pinned SHA: 89e9867f32697aab54aab1de41eb28bf380ba1d6
+- Imported: 2026-04-27
+- Skills (4): security-auditor, api-security-testing, production-code-audit,
+  cloudformation-best-practices
+
+---
+
+Total imported skills: **31**
+Per-skill provenance and vetting flags: see `vendor/*.lock`.

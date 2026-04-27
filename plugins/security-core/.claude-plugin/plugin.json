@@ -1,0 +1,6 @@
+{
+  "name": "security-core",
+  "version": "0.1.0",
+  "description": "Curated security & auditor skills: code review, secure coding, API security testing, production audits.",
+  "author": { "name": "Andre Serralheiro", "url": "https://github.com/serral" }
+}

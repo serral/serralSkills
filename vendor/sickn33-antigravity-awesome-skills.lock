@@ -1,0 +1,21 @@
+upstream: https://github.com/sickn33/antigravity-awesome-skills
+license: MIT + CC BY 4.0
+pinned_sha: 89e9867f32697aab54aab1de41eb28bf380ba1d6
+imported_at: 2026-04-27
+skills:
+  - name: security-auditor
+    source_path: skills/security-auditor
+    vetting_flags: []
+    sniff_test: persona-instructional
+  - name: api-security-testing
+    source_path: skills/api-security-testing
+    vetting_flags: []
+    sniff_test: persona-instructional
+  - name: production-code-audit
+    source_path: skills/production-code-audit
+    vetting_flags: []
+    sniff_test: persona-instructional
+  - name: cloudformation-best-practices
+    source_path: skills/cloudformation-best-practices
+    vetting_flags: []
+    sniff_test: persona-instructional

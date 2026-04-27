@@ -1,0 +1,14 @@
+# Upstream clones (created transiently by scripts/sync.sh)
+/tmp-upstreams/
+
+# OS noise
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Python virtualenvs (manifest.py is plain stdlib, but just in case)
+__pycache__/
+*.pyc
+.venv/

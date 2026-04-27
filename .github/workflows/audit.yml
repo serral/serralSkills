@@ -1,0 +1,23 @@
+name: audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * 1"  # Mondays 05:17 UTC
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv (for uvx mcp-scan)
+        run: pip install uv
+
+      - name: Pattern grep + mcp-scan
+        run: bash scripts/audit.sh
+
+      - name: Verify marketplace.json is in sync
+        run: python3 scripts/manifest.py --check

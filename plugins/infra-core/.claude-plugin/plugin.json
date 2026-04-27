@@ -1,0 +1,6 @@
+{
+  "name": "infra-core",
+  "version": "0.1.0",
+  "description": "Infrastructure-as-code skills: Terraform, CloudFormation, Kubernetes, multi-cloud architecture.",
+  "author": { "name": "Andre Serralheiro", "url": "https://github.com/serral" }
+}

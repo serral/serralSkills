@@ -1,0 +1,6 @@
+{
+  "name": "secdevops-core",
+  "version": "0.1.0",
+  "description": "SecDevOps skills: threat modeling (STRIDE, attack trees), SAST, k8s security policies, GitOps, secrets management.",
+  "author": { "name": "Andre Serralheiro", "url": "https://github.com/serral" }
+}

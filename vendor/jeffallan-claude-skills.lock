@@ -1,0 +1,52 @@
+upstream: https://github.com/jeffallan/claude-skills
+license: MIT
+pinned_sha: 3d95bb16b030af43bd838dc99fdc77dd40b29014
+imported_at: 2026-04-27
+skills:
+  - name: security-reviewer
+    source_path: skills/security-reviewer
+    vetting_flags: []
+  - name: secure-code-guardian
+    source_path: skills/secure-code-guardian
+    vetting_flags:
+      - "line 33: 'curl -I' as example header-check command (instructional, benign)"
+  - name: code-reviewer
+    source_path: skills/code-reviewer
+    vetting_flags: []
+  - name: devops-engineer
+    source_path: skills/devops-engineer
+    vetting_flags:
+      - "lines 124,137: curl in HEALTHCHECK + smoke-test examples (instructional, benign)"
+  - name: sre-engineer
+    source_path: skills/sre-engineer
+    vetting_flags: []
+  - name: monitoring-expert
+    source_path: skills/monitoring-expert
+    vetting_flags: []
+  - name: kubernetes-specialist
+    source_path: skills/kubernetes-specialist
+    vetting_flags: []
+  - name: cloud-architect
+    source_path: skills/cloud-architect
+    vetting_flags: []
+  - name: terraform-engineer
+    source_path: skills/terraform-engineer
+    vetting_flags: []
+  - name: fastapi-expert
+    source_path: skills/fastapi-expert
+    vetting_flags: []
+  - name: nestjs-expert
+    source_path: skills/nestjs-expert
+    vetting_flags: []
+  - name: golang-pro
+    source_path: skills/golang-pro
+    vetting_flags: []
+  - name: react-expert
+    source_path: skills/react-expert
+    vetting_flags: []
+  - name: nextjs-developer
+    source_path: skills/nextjs-developer
+    vetting_flags: []
+  - name: fullstack-guardian
+    source_path: skills/fullstack-guardian
+    vetting_flags: []

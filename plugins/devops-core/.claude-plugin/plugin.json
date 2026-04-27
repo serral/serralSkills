@@ -1,0 +1,6 @@
+{
+  "name": "devops-core",
+  "version": "0.1.0",
+  "description": "DevOps & SRE skills: monitoring, incident runbooks, GitHub Actions, deployment pipelines, cost optimization.",
+  "author": { "name": "Andre Serralheiro", "url": "https://github.com/serral" }
+}

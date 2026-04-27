@@ -1,0 +1,6 @@
+{
+  "name": "backend-core",
+  "version": "0.1.0",
+  "description": "Backend framework specialists: FastAPI, NestJS, Go.",
+  "author": { "name": "Andre Serralheiro", "url": "https://github.com/serral" }
+}
