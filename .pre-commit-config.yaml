@@ -1,0 +1,60 @@
+# Pre-commit hooks for serralSkills.
+#
+# Design notes:
+# - skills/ is VENDORED upstream content; formatters and whitespace fixers MUST NOT
+#   touch it, or we'd drift away from upstream (defeating the sync workflow).
+# - Secret scanning (gitleaks) and security-pattern checks (audit.sh) run over the
+#   whole tree — that IS the point.
+# - Local hooks at the bottom enforce repo-specific invariants.
+
+exclude: '^skills/'
+
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+        # Scan everything, including skills/, since secrets in vendored content
+        # are exactly what we want to catch on import.
+        exclude: ''
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=500]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: '^scripts/.*\.py$'
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+        files: '^scripts/.*\.sh$'
+
+  - repo: local
+    hooks:
+      - id: marketplace-in-sync
+        name: marketplace.json matches plugins/
+        entry: python3 scripts/manifest.py --check
+        language: system
+        pass_filenames: false
+        files: '^(plugins/.*/\.claude-plugin/plugin\.json|\.claude-plugin/marketplace\.json|scripts/manifest\.py)$'
+
+      - id: skills-pattern-audit
+        name: scripts/audit.sh (gitleaks-grade pattern scan over skills/)
+        entry: bash scripts/audit.sh
+        language: system
+        pass_filenames: false
+        # Only re-run when something that could affect the audit changes.
+        files: '^(skills/.*|vendor/.*\.lock|scripts/audit\.sh)$'
