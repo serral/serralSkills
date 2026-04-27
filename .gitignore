@@ -1,3 +1,6 @@
+# Local design / planning history (kept out of the public repo)
+.history/
+
 # Upstream clones (created transiently by scripts/sync.sh)
 /tmp-upstreams/
 

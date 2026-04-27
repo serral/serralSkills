@@ -1,4 +1,4 @@
-# serral/claude-skills
+# serral/serralSkills
 
 Personally curated Claude Code skills, vendored from three vetted upstream
 repos. Exposed as a Claude Code plugin marketplace **and** a flat `skills/`
@@ -12,7 +12,7 @@ backend, frontend, fullstack.**
 
 ```bash
 # In Claude Code:
-/plugin marketplace add serral/claude-skills
+/plugin marketplace add serral/serralSkills
 
 # Then install whichever bundles you want:
 /plugin install security-core@serral

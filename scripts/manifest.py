@@ -22,7 +22,7 @@ PLUGINS_DIR = REPO_ROOT / "plugins"
 MARKETPLACE_PATH = REPO_ROOT / ".claude-plugin" / "marketplace.json"
 
 OWNER = {"name": "Andre Serralheiro", "url": "https://github.com/serral"}
-MARKETPLACE_NAME = "serral-claude-skills"
+MARKETPLACE_NAME = "serralSkills"
 MARKETPLACE_DESC = (
     "Personally curated Claude Code skills, fed from vetted upstream repos. "
     "Focus: security, secdevops, devops, kubernetes, AWS, terraform, backend, "
