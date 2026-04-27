@@ -2,30 +2,30 @@
 #
 # Design notes:
 # - skills/ is VENDORED upstream content; formatters and whitespace fixers MUST NOT
-#   touch it, or we'd drift away from upstream (defeating the sync workflow).
-# - Secret scanning (gitleaks) and security-pattern checks (audit.sh) run over the
-#   whole tree — that IS the point.
+#   touch it, or we'd drift from upstream (defeating the sync workflow). Excludes
+#   are PER-HOOK (not global) so gitleaks still scans skills/ — that's the gate.
 # - Local hooks at the bottom enforce repo-specific invariants.
-
-exclude: '^skills/'
 
 repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2
     hooks:
       - id: gitleaks
-        # Scan everything, including skills/, since secrets in vendored content
-        # are exactly what we want to catch on import.
-        exclude: ''
+        # Scans skills/ too — known-safe placeholders are allowlisted in
+        # .gitleaks.toml with file-scoped rules.
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+        exclude: '^skills/'
       - id: end-of-file-fixer
+        exclude: '^skills/'
       - id: check-merge-conflict
       - id: check-yaml
+        exclude: '^skills/'
       - id: check-json
+        exclude: '^skills/'
       - id: check-added-large-files
         args: [--maxkb=500]
 
@@ -52,9 +52,8 @@ repos:
         files: '^(plugins/.*/\.claude-plugin/plugin\.json|\.claude-plugin/marketplace\.json|scripts/manifest\.py)$'
 
       - id: skills-pattern-audit
-        name: scripts/audit.sh (gitleaks-grade pattern scan over skills/)
+        name: scripts/audit.sh (curl|sh / base64-d / executable-download grep)
         entry: bash scripts/audit.sh
         language: system
         pass_filenames: false
-        # Only re-run when something that could affect the audit changes.
         files: '^(skills/.*|vendor/.*\.lock|scripts/audit\.sh)$'

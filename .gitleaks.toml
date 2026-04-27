@@ -1,0 +1,38 @@
+# Gitleaks config for serralSkills.
+#
+# Inherit the default ruleset, then add curated allowlists for known-safe
+# pedagogical placeholders inside vendored upstream skills.
+#
+# Discipline: every allowlist entry must reference a SPECIFIC FILE PATH.
+# Never broaden by rule alone — that would let real secrets in future upstream
+# syncs slip through. If a new placeholder appears in a different file after a
+# sync, review it manually and add a new path-scoped entry here.
+
+[extend]
+useDefault = true
+
+# ---------------------------------------------------------------------------
+# Allowlists
+# ---------------------------------------------------------------------------
+
+# skills/kubernetes-specialist/references/configuration.md
+# Source: jeffallan/claude-skills @ 3d95bb16. Imported 2026-04-27.
+# Contents: documentation showing example Kubernetes Secret manifests with
+# placeholder values ("MySecurePassword123!", "sk-1234567890abcdef",
+# base64("myuser:mypassword"), and truncated PEM headers). These are teaching
+# examples, not credentials. Confirmed by manual review on import.
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "k8s-specialist tutorial: example Secret manifest placeholders"
+paths = [
+  '''skills/kubernetes-specialist/references/configuration\.md''',
+]
+
+[[rules]]
+id = "private-key"
+[[rules.allowlists]]
+description = "k8s-specialist tutorial: example TLS Secret with PEM-header stub"
+paths = [
+  '''skills/kubernetes-specialist/references/configuration\.md''',
+]
