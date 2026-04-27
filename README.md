@@ -34,15 +34,15 @@ ln -s /path/to/this/repo/skills/security-auditor ~/.claude/skills/security-audit
 
 | Bundle | Skills | Description |
 |---|---|---|
-| `security-core` | 6 | Auditor, secure-code-guardian, code-reviewer, security-reviewer, api-security-testing, production-code-audit |
-| `secdevops-core` | 8 | STRIDE, attack trees, SAST, k8s security policies, GitOps, secrets-management |
+| `security-core` | 8 | Auditor, secure-code-guardian, code-reviewer, security-reviewer, api-security-testing, production-code-audit, PoC generation, vulnerability patching |
+| `secdevops-core` | 9 | STRIDE, attack trees, SAST, k8s security policies, GitOps, secrets-management, isolated dependency management |
 | `infra-core` | 4 | Terraform, CloudFormation, Kubernetes, multi-cloud architecture |
 | `devops-core` | 7 | DevOps/SRE, monitoring, GH Actions, deployment pipelines, runbooks, cost-opt |
 | `backend-core` | 3 | FastAPI, NestJS, Go |
 | `frontend-core` | 2 | React, Next.js |
 | `fullstack-core` | 1 | Fullstack guardian |
 
-Total: **31 skills.** See `NOTICE` for per-skill upstream attribution and
+Total: **34 skills.** See `NOTICE` for per-skill upstream attribution and
 pinned SHAs.
 
 ## Vetting policy
@@ -97,6 +97,7 @@ bash scripts/sync.sh
 - [`jeffallan/claude-skills`](https://github.com/jeffallan/claude-skills) — MIT — 15 skills
 - [`wshobson/agents`](https://github.com/wshobson/agents) — MIT — 12 skills
 - [`sickn33/antigravity-awesome-skills`](https://github.com/sickn33/antigravity-awesome-skills) — MIT + CC BY 4.0 — 4 skills
+- [`gemini-cli-extensions/security`](https://github.com/gemini-cli-extensions/security) — Apache-2.0 — 3 skills
 
 ## License
 

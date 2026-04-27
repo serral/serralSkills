@@ -55,6 +55,23 @@ don't re-discover the same potholes.
 - Persona-instructional content; vetting flags will normally be empty. Spot
   check each new skill anyway.
 
+### `gemini-cli-extensions/security`
+- Layout: `skills/<name>/SKILL.md` (same as jeffallan — straightforward import).
+- **License: Apache-2.0** — first non-MIT vendor in this repo. Attribution is
+  preserved via bit-identical vendoring and the NOTICE entry. No additional
+  license file is required for redistribution of unmodified content, but do not
+  broaden this to other Apache-2.0 repos without re-reading the license terms.
+- **MCP-dependent skills**: all three skills (`poc`, `security-patcher`,
+  `dependency-manager`) call custom MCP tools (`poc_context`, `run_poc`,
+  `security_patch_context`, `install_dependencies`) that are shipped with the
+  upstream Gemini CLI MCP server (`mcp-server/` in the repo). These skills work
+  as instructional guidance in Claude Code but require that MCP server to be
+  wired up for full end-to-end operation. Recorded as `mcp_dependency` under
+  `vetting_flags:` in `vendor/gemini-security.lock`.
+- The repo also contains `commands/` (Gemini CLI TOML slash-commands) and a
+  `GEMINI.md` context file. These are Gemini-specific and were not imported —
+  only the `skills/` subtree is vendored.
+
 ---
 
 ## Audit (the security gate)
@@ -65,6 +82,16 @@ don't re-discover the same potholes.
 Scans `skills/*/SKILL.md` for: `curl|wget` piped to shell, `base64 -d`,
 password-bearing URLs, direct executable downloads. Severe finding =
 exit 1.
+
+**Vetting flag taxonomy** (recorded in `vendor/*.lock` under `vetting_flags:`):
+
+| Flag | Meaning | Action |
+|---|---|---|
+| *(empty list)* | Clean — no hits | None |
+| example curl/wget | Instructional command in skill body | Confirm benign, record |
+| `base64 -d` | Decode idiom (e.g., ArgoCD password) | Confirm benign, record |
+| `mcp_dependency` | Skill calls MCP tools not in Claude Code's default toolset | Document which tools; skill works as instructional guidance only without the external MCP server |
+| `executable_download` | Direct `.zip/.tar/.exe` URL | Investigate — likely a blocker |
 
 **Allowlist:** the FluxCD install command at
 `skills/gitops-workflow/SKILL.md:120` (`curl -s https://fluxcd.io/install.sh
