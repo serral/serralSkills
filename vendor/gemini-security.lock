@@ -1,0 +1,37 @@
+source:
+  repo: https://github.com/gemini-cli-extensions/security
+  pinned_sha: 0e4812c469a61fb87e29ce939f393715221553fb
+  license: Apache-2.0
+  import_date: "2026-04-27"
+
+# Note: Apache-2.0 requires attribution (see NOTICE) but permits redistribution
+# of unmodified files without including the full license text inline.
+# We retain the upstream copyright by vendoring bit-identical copies.
+
+skills:
+  - name: poc
+    source_path: skills/poc
+    bundle: security-core
+    vetting_flags:
+      - "mcp_dependency: uses poc_context and run_poc tools from the Gemini CLI MCP
+        server (mcp-server/ in upstream repo). Skills will not function in Claude Code
+        without that MCP server wired up. Instructional content is clean; no curl/wget/base64
+        hits. Flagged as design limitation, not a security concern."
+
+  - name: security-patcher
+    source_path: skills/security-patcher
+    bundle: security-core
+    vetting_flags:
+      - "mcp_dependency: uses security_patch_context and run_poc tools, and references
+        security:analyze (a Gemini CLI slash command). Will not function in Claude Code
+        without the Gemini CLI MCP server. Content is clean; no curl/wget/base64 hits."
+
+  - name: dependency-manager
+    source_path: skills/dependency-manager
+    bundle: secdevops-core
+    vetting_flags:
+      - "mcp_dependency: uses install_dependencies tool from the Gemini CLI MCP server.
+        Will not function in Claude Code without that MCP server. Content is clean;
+        no curl/wget/base64 hits."
+
+deferred_targets: []

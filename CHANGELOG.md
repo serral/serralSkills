@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.2.0 — 2026-04-27 — Add gemini-cli-extensions/security
+
+### Imported
+- **`gemini-cli-extensions/security`** @ `0e4812c4` (Apache-2.0) — 3 skills
+
+### New skills
+- `poc` → `security-core` — PoC generation for vulnerability testing
+- `security-patcher` → `security-core` — vulnerability patching workflow
+- `dependency-manager` → `secdevops-core` — isolated dependency management for PoC execution
+
+### Vetting flags carried forward (informational, all benign)
+- All three skills carry `mcp_dependency` flags: they invoke MCP tools
+  (`poc_context`, `run_poc`, `security_patch_context`, `install_dependencies`) shipped
+  with the upstream Gemini CLI MCP server. Skills function as instructional content in
+  Claude Code but require that MCP server to be wired up for full operation.
+
+### License note
+Apache-2.0 (first non-MIT vendor). Attribution preserved in NOTICE; upstream copyright
+retained via bit-identical vendoring.
+
+---
+
 ## 0.1.0 — 2026-04-27 — Initial import
 
 Curated 31 skills from 3 vetted upstream repos.

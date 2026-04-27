@@ -40,7 +40,17 @@ file.
 - Skills (4): security-auditor, api-security-testing, production-code-audit,
   cloudformation-best-practices
 
+## gemini-cli-extensions/security
+- Upstream: https://github.com/gemini-cli-extensions/security
+- License: Apache-2.0
+- Pinned SHA: 0e4812c469a61fb87e29ce939f393715221553fb
+- Imported: 2026-04-27
+- Skills (3): poc, security-patcher, dependency-manager
+- Note: All three skills depend on MCP tools shipped with the upstream Gemini CLI
+  MCP server (`poc_context`, `run_poc`, `security_patch_context`, `install_dependencies`).
+  They require that MCP server to be wired into Claude Code to function as designed.
+
 ---
 
-Total imported skills: **31**
+Total imported skills: **34**
 Per-skill provenance and vetting flags: see `vendor/*.lock`.
