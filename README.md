@@ -89,6 +89,9 @@ bash scripts/sync.sh
 
 - [`docs/OPERATIONS.md`](docs/OPERATIONS.md) — runbook for adding skills,
   per-upstream quirks, audit/pre-commit notes, push gotchas.
+- [`docs/SYNC_REVIEW.md`](docs/SYNC_REVIEW.md) — human checklist for
+  reviewing weekly upstream sync PRs (supply-chain gate on top of the
+  automated audit).
 - [`CHANGELOG.md`](CHANGELOG.md) — release history.
 - [`NOTICE`](NOTICE) — per-upstream attribution and pinned SHAs.
 
