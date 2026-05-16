@@ -1,6 +1,6 @@
 upstream: https://github.com/jeffallan/claude-skills
 license: MIT
-pinned_sha: 3d95bb16b030af43bd838dc99fdc77dd40b29014
+pinned_sha: 5e8b6b8ff4007414f91f980771047b6136600c34
 imported_at: 2026-04-27
 skills:
   - name: security-reviewer
