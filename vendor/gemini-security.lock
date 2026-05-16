@@ -1,8 +1,7 @@
-source:
-  repo: https://github.com/gemini-cli-extensions/security
-  pinned_sha: 0e4812c469a61fb87e29ce939f393715221553fb
-  license: Apache-2.0
-  import_date: "2026-04-27"
+upstream: https://github.com/gemini-cli-extensions/security
+license: Apache-2.0
+pinned_sha: 0e4812c469a61fb87e29ce939f393715221553fb
+imported_at: 2026-04-27
 
 # Note: Apache-2.0 requires attribution (see NOTICE) but permits redistribution
 # of unmodified files without including the full license text inline.
