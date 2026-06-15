@@ -34,3 +34,4 @@ jobs:
             - [ ] Diff in `skills/` is plausibly an upstream improvement
             - [ ] No new entries under `vendor/*.lock` `vetting_flags:`
             - [ ] Audit job below is green
+            - [ ] `CHANGELOG.md` updated with this sync's entry (see `docs/SYNC_REVIEW.md` §8)

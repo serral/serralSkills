@@ -85,6 +85,10 @@ bash scripts/sync.sh
 # "chore: upstream sync <date>". Audit job runs on every PR.
 ```
 
+Every sync (manual or CI) gets a `CHANGELOG.md` entry before merge - the sync
+PR template, the add-a-skill checklist, and `docs/SYNC_REVIEW.md` §8 all enforce
+this. See [Keeping the CHANGELOG current](docs/OPERATIONS.md#keeping-the-changelog-current).
+
 ## Documentation
 
 - [`docs/OPERATIONS.md`](docs/OPERATIONS.md) — runbook for adding skills,
@@ -92,7 +96,8 @@ bash scripts/sync.sh
 - [`docs/SYNC_REVIEW.md`](docs/SYNC_REVIEW.md) — human checklist for
   reviewing weekly upstream sync PRs (supply-chain gate on top of the
   automated audit).
-- [`CHANGELOG.md`](CHANGELOG.md) — release history.
+- [`CHANGELOG.md`](CHANGELOG.md) — release history; updated on every sync and
+  import (see *Keeping the CHANGELOG current* in OPERATIONS).
 - [`NOTICE`](NOTICE) — per-upstream attribution and pinned SHAs.
 
 ## Upstream sources

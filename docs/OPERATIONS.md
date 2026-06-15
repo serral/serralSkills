@@ -21,8 +21,10 @@ don't re-discover the same potholes.
    `plugins/<bundle>/.claude-plugin/plugin.json`.
 7. `python3 scripts/manifest.py` to regenerate `.claude-plugin/marketplace.json`.
 8. Update `NOTICE` skill list.
-9. `pre-commit run --all-files` — must pass.
-10. Commit and push.
+9. Add a `CHANGELOG.md` entry under the next release heading (see
+   [Keeping the CHANGELOG current](#keeping-the-changelog-current)).
+10. `pre-commit run --all-files` — must pass.
+11. Commit and push.
 
 ---
 
@@ -135,7 +137,38 @@ URL changes, that's a red flag.
 
 `.github/workflows/sync.yml`: weekly cron (Mondays 06:23 UTC) opens a PR
 titled `chore: upstream sync <run-id>`. The audit workflow runs as a check.
-Review the diff (especially any new `vetting_flags`) before merging.
+Review the diff (especially any new `vetting_flags`) before merging. **Before
+merging, add the `CHANGELOG.md` entry to the PR branch** (see below) - the PR
+template has a checklist item for it.
+
+---
+
+## Keeping the CHANGELOG current
+
+`CHANGELOG.md` is the operator-facing record of what changed and why. It drifted
+once already (the 2026-05-16 and 2026-06-15 syncs landed unrecorded), so the
+reminder now lives in three places that are hard to skip:
+
+1. The sync PR body (`.github/workflows/sync.yml`) has a `CHANGELOG.md updated`
+   checklist item.
+2. The add-a-skill checklist above (step 9).
+3. `docs/SYNC_REVIEW.md` §8 (post-merge).
+
+**What earns an entry:** every upstream sync (even content-only refreshes), every
+skill import, and any tooling/CI change an operator would want surfaced (action
+bumps, new secrets, audit-gate changes).
+
+**Conventions:**
+- Newest version first, under a `## <version> — <date> — <summary>` heading.
+- Bump the patch digit for content-only syncs (e.g. `0.2.1`), the minor digit
+  for structural changes or new skills (e.g. `0.3.0`).
+- For syncs, list the per-source `pinned_sha` bumps (`<old> → <new>`) so the
+  record is traceable without `git log`.
+- Note "Skill count unchanged (N)" or the new total, and call out any new
+  `vetting_flags`.
+
+For the automated weekly sync PR, the merging operator is responsible for adding
+the entry to the PR branch before merge - the bot does not write it.
 
 ---
 
