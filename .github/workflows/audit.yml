@@ -18,6 +18,8 @@ jobs:
 
       - name: Pattern grep + mcp-scan
         run: bash scripts/audit.sh
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Verify marketplace.json is in sync
         run: python3 scripts/manifest.py --check
