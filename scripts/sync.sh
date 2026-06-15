@@ -8,7 +8,7 @@
 #
 # Usage: bash scripts/sync.sh [--dry-run]
 #
-# Requires: git, python3, uvx (for mcp-scan), grep.
+# Requires: git, python3, uvx (for snyk-agent-scan), grep.
 
 set -euo pipefail
 

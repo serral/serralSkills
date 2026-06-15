@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Install uv (for uvx mcp-scan)
+      - name: Install uv (for uvx snyk-agent-scan)
         run: pip install uv
 
-      - name: Pattern grep + mcp-scan
+      - name: Pattern grep + snyk-agent-scan
         run: bash scripts/audit.sh
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

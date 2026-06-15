@@ -55,7 +55,7 @@ Every skill in this repo has been:
 4. Pinned to a specific upstream commit SHA in `vendor/*.lock`.
 
 Updates are gated: `scripts/sync.sh` re-pulls upstream, regenerates the
-content, runs `uvx mcp-scan@latest`, and produces a diff for review. The
+content, runs `uvx snyk-agent-scan@latest`, and produces a diff for review. The
 `.github/workflows/audit.yml` workflow blocks PRs on any new vetting hit.
 
 ## Layout
@@ -68,7 +68,7 @@ content, runs `uvx mcp-scan@latest`, and produces a diff for review. The
 ├── vendor/<repo>.lock                # per-source pinned SHA + per-skill provenance + vetting flags
 ├── scripts/
 │   ├── sync.sh                       # re-pull upstreams, copy tracked skills, audit, diff
-│   ├── audit.sh                      # run mcp-scan + grep checks
+│   ├── audit.sh                      # run snyk-agent-scan + grep checks
 │   └── manifest.py                   # regenerate marketplace.json from plugins/
 ├── .github/workflows/{audit,sync}.yml
 ├── NOTICE                            # upstream attribution

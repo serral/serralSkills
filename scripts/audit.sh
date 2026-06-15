@@ -4,7 +4,7 @@
 # Layered checks:
 #   1. Pattern grep — flags curl|wget shell-pipe-to-eval, base64 -d, password URLs,
 #      direct executable downloads.
-#   2. uvx mcp-scan@latest --skills skills/ — best-effort; skipped with a warning
+#   2. uvx snyk-agent-scan@latest --skills skills/ — best-effort; skipped with a warning
 #      if uvx isn't installed.
 #
 # Exits non-zero on any NEW finding (relative to the flags already recorded in
