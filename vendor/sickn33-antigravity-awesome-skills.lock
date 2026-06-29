@@ -1,6 +1,6 @@
 upstream: https://github.com/sickn33/antigravity-awesome-skills
 license: MIT + CC BY 4.0
-pinned_sha: 2312cadd183cad88bbb1703755f77931eb05b3c7
+pinned_sha: 8560771a82a236472216c03b956fea33e21cd63c
 imported_at: 2026-04-27
 skills:
   - name: security-auditor
