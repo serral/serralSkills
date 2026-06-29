@@ -1,6 +1,6 @@
 upstream: https://github.com/wshobson/agents
 license: MIT
-pinned_sha: cc37bfdd292ce520ba1c44df7a3a70d5f8137236
+pinned_sha: 5cc2549a50fc672230efd0a0307e2fd27ffba792
 imported_at: 2026-04-27
 deferred_targets:
   - name: backend-api-security
