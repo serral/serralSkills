@@ -12,7 +12,7 @@ backend, frontend, fullstack.**
 
 ```bash
 # In Claude Code:
-/plugin marketplace add serral/serralSkills
+/plugin marketplace add serral/skills
 
 # Then install whichever bundles you want:
 /plugin install security-core@serral

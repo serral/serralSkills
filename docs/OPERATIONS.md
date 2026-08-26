@@ -191,7 +191,7 @@ the entry to the PR branch before merge - the bot does not write it.
   any operation on this repo. The work account `ARserralheiro` is for
   Asset Reality org repos only.
 - **Marketplace name vs repo path**: in Claude Code, you `/plugin marketplace
-  add serral/serralSkills` (repo path), but `/plugin marketplace remove
+  add serral/skills` (repo path), but `/plugin marketplace remove
   serralSkills` (marketplace `name` field from `marketplace.json`). Don't
   confuse the two.
 
