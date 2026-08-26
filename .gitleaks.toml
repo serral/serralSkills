@@ -1,4 +1,4 @@
-# Gitleaks config for serralSkills.
+# Gitleaks config for serral/skills.
 #
 # Inherit the default ruleset, then add curated allowlists for known-safe
 # pedagogical placeholders inside vendored upstream skills.

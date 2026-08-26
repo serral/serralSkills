@@ -1,4 +1,4 @@
-# Pre-commit hooks for serralSkills.
+# Pre-commit hooks for serral/skills.
 #
 # Design notes:
 # - skills/ is VENDORED upstream content; formatters and whitespace fixers MUST NOT

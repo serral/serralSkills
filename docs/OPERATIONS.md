@@ -1,6 +1,6 @@
 # Operations runbook
 
-Operator-facing notes for maintaining `serralSkills` over time. Captures
+Operator-facing notes for maintaining `serral/skills` over time. Captures
 lessons from the initial import (2026-04-27) so future syncs and additions
 don't re-discover the same potholes.
 

@@ -1,4 +1,4 @@
-# serral/serralSkills
+# serral/skills
 
 Personally curated Claude Code skills, vendored from three vetted upstream
 repos. Exposed as a Claude Code plugin marketplace **and** a flat `skills/`
